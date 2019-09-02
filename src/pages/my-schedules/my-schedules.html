@@ -1,0 +1,31 @@
+<!--
+  Generated template for the schedulesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>My Work Schedules</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+  	<ion-item-sliding  *ngFor="let schedule of schedules" #item>
+  		<ion-item>
+        <ion-icon name="calendar" item-start></ion-icon>
+  			<h2><b>From:</b> {{ schedule.fldcheckin }}</h2>
+        <h2><b>To:</b> {{ schedule.fldcheckout }}</h2>
+  			<h2><b>Time Worked:</b> {{ (schedule.fldhours/3600) | number }} hours</h2>
+        <h2><b>Summary:</b> {{ schedule.fldsummary }}</h2>
+  		</ion-item>
+  		<!--ion-item-options>
+  			<button ion-button color="danger" (click)="createExcuse(item,schedule)">
+  			<ion-icon name="thumbs-down"></ion-icon>Create Excuse</button>
+  		</ion-item-options-->
+  	</ion-item-sliding>
+	</ion-list>
+</ion-content>

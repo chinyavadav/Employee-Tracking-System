@@ -1,0 +1,52 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <img src="assets/icon/icon.png" style="width:100%;height:auto;">
+          </ion-col>
+          <ion-col col-8>
+            <br><ion-title text-center>SharpConsult<br/>Engr (Pvt) Ltd</ion-title>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+ 
+  <ion-content padding>
+    <ion-list *ngIf="global.session">
+    	<button menuClose ion-item detail-none>
+    		<ion-icon item-start name="home"></ion-icon> Home</button>
+    	<button menuClose ion-item detail-none (click)="openPage(0)">
+    		<ion-icon item-start name="calendar"></ion-icon> My Work Schedule</button>
+      <button menuClose ion-item detail-none (click)="openPage(1)">
+        <ion-icon item-start name="map"></ion-icon> Map</button>
+      <button *ngIf="global.session.fldrole==='Manager'" menuClose ion-item detail-none (click)="openPage(3)">
+        <ion-icon item-start name="filing"></ion-icon> Administrative</button>
+    	<ion-item-divider>Account</ion-item-divider>
+      <ion-item>
+        <ion-icon item-start name="contact"></ion-icon>
+        <h2><b>{{ global.session.fldforename }} {{ global.session.fldsurname }}</b></h2>
+        <hr/>
+        <h2>{{ global.session.fldphone_no }}</h2>
+      </ion-item>
+    	<button menuClose ion-item detail-none (click)="openPage(2)">
+    		<ion-icon item-start name="cog"></ion-icon> Settings</button>
+    	<button *ngIf="global.session" menuClose ion-item detail-none (click)="logout()">
+    		<ion-icon item-start name="log-out"></ion-icon> Logout</button>
+    </ion-list>
+    <ion-list *ngIf="!global.session">
+      <button menuClose ion-item detail-none (click)="openPage(2)">
+        <ion-icon item-start name="cog"></ion-icon> Settings</button>
+    </ion-list>
+   </ion-content>
+   	<ion-footer padding>
+  		<ion-label text-center>
+        	SharpConsult Engineering (Pvt) Ltd<br> App v.1.0.2
+  		</ion-label>	
+	</ion-footer>
+  </ion-menu>
+ 
+<!-- main navigation -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

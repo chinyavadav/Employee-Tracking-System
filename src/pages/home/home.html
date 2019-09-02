@@ -1,0 +1,47 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>SharpConsult Engineering</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>  
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-image:url('assets/imgs/bg1.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2></ion-col>
+      <ion-col col-8 style="margin-left: auto; margin-right: auto; display: block;">
+        <img src="assets/imgs/logo.png" style="width:100%;height:auto;">
+      </ion-col>
+      <ion-col col-2></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list *ngIf="global.session" style="margin-top: 30px;">
+    <ion-item>
+      <ion-icon name="contact" item-start></ion-icon>
+      <h2>{{ global.session.fldforename }} {{ global.session.fldsurname }}</h2>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="briefcase" item-start></ion-icon>
+      <h2>{{ global.session.fldrole }}</h2>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="calculator" item-start></ion-icon>
+      <h2>{{ global.session.fldphone_no }}</h2>
+    </ion-item>
+  </ion-list>
+  <button *ngIf="statusRecordLength===0" ion-button icon-start block color="secondary" outline item-end (click)="checkIn()"><ion-icon name="thumbs-up"></ion-icon> Check In</button>
+  <button *ngIf="statusRecordLength!==0" ion-button icon-start block color="danger" outline item-end (click)="checkOut()"><ion-icon name="thumbs-down"></ion-icon> Check Out</button>
+</ion-content>

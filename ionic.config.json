@@ -1,0 +1,7 @@
+{
+  "name": "SharpConsult",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

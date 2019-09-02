@@ -1,0 +1,63 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Signup</ion-title>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-image:url('assets/imgs/bg1.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+  <form (ngSubmit)="register()" [formGroup]="registrationForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2></ion-col>
+        <ion-col col-8 style="margin-left: auto;margin-right: auto; margin-top: 10px; display: block;">
+          <img src="assets/imgs/logo.png" style="width:100%;height:auto;">
+        </ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list class="list-form" style="margin-top:10px;margin-bottom: 10px">
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Phone No.</ion-label>
+        <ion-input type="number" formControlName="phoneno"></ion-input>
+      </ion-item>      
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Forename</ion-label>
+        <ion-input type="text" formControlName="forename"></ion-input>
+      </ion-item>
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Surname</ion-label>
+        <ion-input type="text" formControlName="surname"></ion-input>
+      </ion-item>
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Role</ion-label>
+        <ion-select formControlName="role">
+          <ion-option value="Manager">Manager</ion-option>
+          <ion-option value="Site Clerk">Site Clerk</ion-option>
+          <ion-option value="Storeman">Storeman</ion-option>
+          <ion-option value="Builder">Builder</ion-option>
+          <ion-option value="Electrician">Electrician</ion-option>
+          <ion-option value="Carpenter">Carpenter</ion-option>
+          <ion-option value="Labourers">Labourers</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item-divider style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;"></ion-item-divider>
+    </ion-list> 
+    <button style="font-size: 17px;margin-bottom: 20px;" bottom ion-button  block  type="submit">Register</button>   
+  </form>
+</ion-content>

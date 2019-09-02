@@ -1,0 +1,36 @@
+<!--
+  Generated template for the ManagerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>SharpConsult Engineering</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>  
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-image:url('assets/imgs/bg1.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2></ion-col>
+      <ion-col col-8 style="margin-left: auto; margin-right: auto; display: block;">
+        <img src="assets/imgs/logo.png" style="width:100%;height:auto;">
+      </ion-col>
+      <ion-col col-2></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list style="margin-top: 30px;">
+    <button ion-button icon-start block (click)="employees()"><ion-icon name="people"></ion-icon> Employees</button>
+    <button ion-button icon-start block (click)="tracking()"><ion-icon name="locate"></ion-icon> Track Locations</button>
+    <button ion-button icon-start block (click)="showSchedules()"><ion-icon name="time"></ion-icon> Worked Hours</button>
+  </ion-list>
+</ion-content>
